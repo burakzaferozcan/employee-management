@@ -34,6 +34,8 @@ class CityResource extends Resource
                         'name'
                     ),
                     TextInput::make('name')
+                        ->required()
+                        ->maxLength(255)
                 ])
             ]);
     }

@@ -32,8 +32,11 @@ class StateResource extends Resource
                     Select::make('country_id')->relationship(
                         'country',
                         'name'
-                    ),
+                    )
+                        ->required(),
                     TextInput::make('name')
+                        ->required()
+                        ->maxLength(255)
                 ])
             ]);
     }

@@ -69,10 +69,18 @@ class EmployeeResource extends Resource
                         'department',
                         'name'
                     )->required(),
-                    TextInput::make('first_name')->required(),
-                    TextInput::make('last_name')->required(),
-                    TextInput::make('address')->required(),
-                    TextInput::make('zip_code')->required(),
+                    TextInput::make('first_name')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('last_name')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('address')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('zip_code')
+                        ->required()
+                        ->maxLength(5),
                     DatePicker::make('birth_date')->required(),
                     DatePicker::make('date_hired')->required(),
                 ])
